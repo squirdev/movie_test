@@ -36,8 +36,7 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "app/",
-            "DigiPig\\MovieDB\\": "packages/digipig/moviedb/src/"
+            "App\\": "app/"
         },
         "classmap": [
             "database/seeds",
