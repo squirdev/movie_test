@@ -8,7 +8,7 @@
 #Installation
 - install apache2
 - composer install or composer update
-- php artisan serve migrate
+- php artisan serve migrate (create database tables)
 - php artisan serve db:seed (initialize database and pull movie data from imdb)
 - npm install 
 - npm run prod (this is just mix build for resource)
