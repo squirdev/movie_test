@@ -1,6 +1,7 @@
 {
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
+    "/css/main.css": "/css/main.css",
     "/vendors/admin/css/app.css": "/vendors/admin/css/app.css",
     "/vendors/admin/css/bootstrap-extended.css": "/vendors/admin/css/bootstrap-extended.css",
     "/vendors/admin/css/bootstrap.min.css": "/vendors/admin/css/bootstrap.min.css",
@@ -1351,8 +1352,5 @@
     "/vendors/js/vendors.min.js": "/vendors/js/vendors.min.js",
     "/vendors/js/waves/waves.min.js": "/vendors/js/waves/waves.min.js",
     "/css/extensions/sweetalert2.min.css": "/css/extensions/sweetalert2.min.css",
-    "/css/main.css": "/css/main.css",
-    "/js/bootstrap.js": "/js/bootstrap.js",
-    "/js/components/ExampleComponent.vue": "/js/components/ExampleComponent.vue",
     "/js/extensions/sweetalert2.all.min.js": "/js/extensions/sweetalert2.all.min.js"
 }

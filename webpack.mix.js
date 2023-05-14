@@ -30,10 +30,13 @@ function mixAssetsDir(query, cb) {
 
 
 mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css');
+    .sass('resources/sass/app.scss', 'public/css').postCss('resources/css/main.css', 'public/css', [
+    require('tailwindcss'),
+]);
+
 mixAssetsDir('/vendors/**',(src,dest)=>mix.copyDirectory(src,dest));
-mixAssetsDir('/css/**',(src,dest)=>mix.copyDirectory(src,dest))
-mixAssetsDir('/js/**',(src,dest)=>mix.copyDirectory(src,dest))
+mixAssetsDir('/css/extensions/**',(src,dest)=>mix.copyDirectory(src,dest))
+mixAssetsDir('/js/extensions/**',(src,dest)=>mix.copyDirectory(src,dest))
 var LiveReloadPlugin = require("webpack-livereload-plugin");
 
 

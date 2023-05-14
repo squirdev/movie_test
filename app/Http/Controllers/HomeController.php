@@ -27,7 +27,7 @@ class HomeController extends Controller
         if (Gate::allows('access admin')) {
             return redirect()->route('admin.home');
         }else{
-            return redirect()->route('movies.index',['tag'=>'movie','name'=>'aaa','page'=>1]);
+            return redirect()->route('movies.index');
         }
 
     }
