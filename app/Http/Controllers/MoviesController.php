@@ -45,10 +45,10 @@ class MoviesController extends Controller
 
        $rented_movie_ids = RentMovie::where('user_id',Auth::user()->id)->get()->pluck('id');
 
-        return view('index', [
+        return view('index'/*, [
             'movies' => $data,
             'rented_movie_ids' => $rented_movie_ids,
-        ]);
+        ]*/);
     }
 
     public function rent(Request  $request){

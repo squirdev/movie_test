@@ -2,8 +2,11 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\RentMovie;
+use Illuminate\Database\Eloquent\Model;
 use Livewire\Component;
-
+use App\Models\Movie;
+use Auth;
 use Illuminate\Support\Facades\Http;
 
 class SearchDropdown extends Component
@@ -13,14 +16,12 @@ class SearchDropdown extends Component
     public function render()
     {
         $searchResults = [];
-
-        if(strlen($this->search) >= 2){
-
-            $searchResults = Http::withToken(config('services.tmdb.token'))
-            ->get('https://api.themoviedb.org/3/search/movie?query='.$this->search)
-            ->json()['results'];
+        if(strlen($this->search) >= 2) {
+            $movie = new Movie();
+            $movie = $movie->whereLike(['tag','title'],$this->search);
+            $data = $movie->offset(0)->limit(10)->orderBy('created_at','desc')->get();
+            $searchResults = $data;
         }
-
 
         return view('livewire.search-dropdown', [
             'searchResults' => collect($searchResults)->take(7)
