@@ -30,7 +30,7 @@ class MovieSeeder extends Seeder
             $plan_id=1;
             $rent_price =10;
             $rent_start = \Illuminate\Support\Carbon::now();
-            $rent_end = $rent_start->addDays(1);
+            $rent_end = \Illuminate\Support\Carbon::now()->addDays(1);
 
             if(in_array($key,$premiumKeys)){
                 $rent_price =20;
