@@ -1352,5 +1352,7 @@
     "/vendors/js/vendors.min.js": "/vendors/js/vendors.min.js",
     "/vendors/js/waves/waves.min.js": "/vendors/js/waves/waves.min.js",
     "/css/extensions/sweetalert2.min.css": "/css/extensions/sweetalert2.min.css",
-    "/js/extensions/sweetalert2.all.min.js": "/js/extensions/sweetalert2.all.min.js"
+    "/css/extensions/toastr.min.css": "/css/extensions/toastr.min.css",
+    "/js/extensions/sweetalert2.all.min.js": "/js/extensions/sweetalert2.all.min.js",
+    "/js/extensions/toastr.min.js": "/js/extensions/toastr.min.js"
 }

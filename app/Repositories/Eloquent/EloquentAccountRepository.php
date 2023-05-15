@@ -13,7 +13,7 @@ use Illuminate\Http\JsonResponse;
 use App\Exceptions\GeneralException;
 use Carbon\Carbon;
 use App\Models\PaymentMethods;
-
+use Auth;
 
 class EloquentAccountRepository extends EloquentBaseRepository implements AccountRepository
 {

@@ -40,6 +40,7 @@ class Movie extends Model
     protected $casts = [
         'status'    => 'boolean',
         'release_year' => 'integer',
+        'rent_price'    => 'integer',
         'rent_start' => 'date',
         'rent_end'  =>  'date'
     ];

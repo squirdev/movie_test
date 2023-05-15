@@ -35,5 +35,13 @@ class AuthServiceProvider extends ServiceProvider
                 return false;
         });
 
+        Gate::define('access front',function(User  $user){
+
+            if($user->subscription && $user->subscription->plan){
+                return true;
+            }
+            return false;
+        });
+
     }
 }

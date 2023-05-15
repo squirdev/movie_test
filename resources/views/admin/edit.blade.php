@@ -42,7 +42,7 @@
                         <div class="row mb-3">
                             <label for="title" class="col-sm-3 col-form-label">Title</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title" value="@if(isset($movie)) {{$movie['title']}} @endif" placeholder="Title">
+                                <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title" value="@if(isset($movie)){{$movie['title']}}@endif" placeholder="Title">
                             </div>
                             @error('title')
                             <p><small class="text-danger">{{ $message }}</small></p>
@@ -60,7 +60,7 @@
                         <div class="row mb-3">
                             <label for="rent_price" class="col-sm-3 col-form-label">Price</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control @error('rent_price') is-invalid @enderror" id="rent_price"  name ="rent_price" value=" @if(isset($movie)) {{$movie['rent_price']}} @endif" placeholder="Please input rent price">
+                                <input type="number" class="form-control @error('rent_price') is-invalid @enderror" id="rent_price"  name ="rent_price" value="@if(isset($movie)){{$movie['rent_price']}}@endif" placeholder="Please input rent price">
                             </div>
                             @error('rent_price')
                             <p><small class="text-danger">{{ $message }}</small></p>
@@ -69,7 +69,7 @@
                         <div class="row mb-3">
                             <label for="tag" class="col-sm-3 col-form-label">Tag</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control @error('tag') is-invalid @enderror" id="tag" name="tag" value=" @if(isset($movie))  {{$movie['tag']}} @endif" placeholder=" movie or music">
+                                <input type="text" class="form-control @error('tag') is-invalid @enderror" id="tag" name="tag" value="@if(isset($movie)){{$movie['tag']}}@endif" placeholder=" movie or music">
                             </div>
                             @error('tag')
                             <p><small class="text-danger">{{ $message }}</small></p>
@@ -88,7 +88,7 @@
                             <label for="rent_period" class="col-sm-3 col-form-label">Rent Period</label>
                             <div class="col-sm-3">
                                 <label class="form-label">Select Rent Start</label>
-                                <input type="text" class="form-control datepicker @error('rent_start') is-invalid @enderror" value="@if(isset($movie)) {{$movie['rent_start']}} @endif" name="rent_start" />
+                                <input type="text" class="form-control datepicker @error('rent_start') is-invalid @enderror" value="@if(isset($movie)) {{$movie['rent_start']}}  @endif" name="rent_start" />
                             </div>
                             <div class="col-sm-3">
                                 <label class="form-label">Select Rent End</label>

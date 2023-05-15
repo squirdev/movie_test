@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>TEST</title>
     <link rel="stylesheet" href="{{asset(mix('/css/main.css'))}}">
+
+    <link rel="stylesheet" href="{{ asset(mix('/vendors/admin/plugins/notifications/css/lobibox.min.css'))}}" />
     <livewire:styles>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     <style>
@@ -52,6 +54,7 @@
 
             </ul>
             <div class="flex flex-col md:flex-row items-center">
+                <p>Credit:{{\Illuminate\Support\Facades\Auth::user()->credit}}</p>
 {{--                <livewire:search-dropdown>--}}
                 <div class="md:ml-4 mt-3 md:mt-0">
                     <a href="#">
@@ -63,6 +66,69 @@
     </nav>
 
     @yield('content')
-    <livewire:scripts>
+    <script src="{{ asset(mix('/vendors/admin/js/bootstrap.bundle.min.js')) }}"></script>
+    <!--plugins-->
+    <script src="{{ asset(mix('/vendors/admin/js/jquery.min.js')) }}"></script>
+    <script src="{{ asset(mix('/vendors/admin/plugins/notifications/js/lobibox.min.js'))}}"></script>
+
+    @if(Session::has('message'))
+
+        <script>
+            let type = "{{Session::get('status',"success")}}"
+            switch (type) {
+                case 'info':
+
+                    Lobibox.notify('info', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        rounded: true,
+                        icon: 'bx bx-info-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'top right',
+                        msg: "{!! Session::get('message') !!}"
+                    });
+                    break;
+
+                case 'warning':
+                    Lobibox.notify('warning', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        rounded: true,
+                        icon: 'bx bx-error',
+                        continueDelayOnInactiveTab: false,
+                        position: 'top right',
+                        msg: "{!! Session::get('message') !!}"
+                    });
+                    break;
+
+                case 'success':
+                    Lobibox.notify('success', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        rounded: true,
+                        icon: 'bx bx-error',
+                        continueDelayOnInactiveTab: false,
+                        position: 'top right',
+                        msg: "{!! Session::get('message') !!}"
+                    });
+                    break;
+
+                case 'error':
+                    Lobibox.notify('error', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        rounded: true,
+                        icon: 'bx bx-error',
+                        continueDelayOnInactiveTab: false,
+                        position: 'top right',
+                        msg: "{!! Session::get('message') !!}"
+                    });
+                    break;
+
+            }
+        </script>
+        @endif
+        <livewire:scripts>
+
 </body>
 </html>

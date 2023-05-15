@@ -65,7 +65,7 @@ class RouteServiceProvider extends ServiceProvider
         Route::middleware('web')
             ->namespace($this->namespace)
             ->group(base_path('routes/auth.php'));
-        Route::middleware('web','auth')
+        Route::middleware('web','auth','can:access front')
             ->namespace($this->namespace)
             ->as('movies.')
             ->group(base_path('routes/movie.php'));

@@ -179,7 +179,7 @@ class AdminController extends Controller
         $rules = [
             'title'         =>  ['required','string', 'min:1'],
             'plan'          =>  ['required','numeric'],
-            'rent_price'    =>  ['required','string' ],
+            'rent_price'    =>  ['required','numeric','gt:0'],
             'rent_start'    =>  ['required','string','min:1'],
             'rent_end'      =>  ['required','string','min:1'],
             'tag'           =>  ['required','string' ,'min:1'],
@@ -210,7 +210,7 @@ class AdminController extends Controller
         $rules = [
             'title'         =>  ['required','string'],
             'plan'          =>  ['required','numeric'],
-            'rent_price'    =>  ['required','numeric'],
+            'rent_price'    =>  ['required','numeric','gt:0'],
             'rent_start'    =>  ['required','string'],
             'rent_end'      =>  ['required','string'],
             'tag'           =>  ['required','string'],

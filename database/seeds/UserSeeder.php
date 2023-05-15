@@ -81,6 +81,7 @@ class UserSeeder extends Seeder
             'password'          => bcrypt($defaultPassword),
             'status'            => true,
             'is_admin'          => false,
+            'credit'            => 100,
             'email_verified_at' => now(),
         ]);
         $basic_user->save();
@@ -120,6 +121,7 @@ class UserSeeder extends Seeder
             'password'          => bcrypt($defaultPassword),
             'status'            => true,
             'is_admin'          => false,
+            'credit'            => 100,
             'email_verified_at' => now(),
         ]);
         $premium_user->save();

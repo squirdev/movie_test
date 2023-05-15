@@ -12,14 +12,18 @@
            </div>
         </div>
     </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
         @if(count($searchResult)==0)
            <div class="p-5">
                <p> There is no earch result</p>
            </div>
         @endif
         @foreach($searchResult as $item)
-            <x-movie-card :movie="$item"/>
+                @if(in_array($item->id , $rented_ids))
+                    <x-movie-card :movie="$item" :rented="true"/>
+                @else
+                    <x-movie-card :movie="$item" :rented="false"/>
+                @endif
         @endforeach
     </div>
     <div class="row my-5 ">

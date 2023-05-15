@@ -40,6 +40,7 @@ class User extends Authenticatable
         'is_admin'    => 'boolean',
         'is_customer' => 'boolean',
         'status'      => 'boolean',
+        'credit'      => 'integer'
     ];
 
 
